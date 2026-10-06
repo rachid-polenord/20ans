@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relecture des légendes</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 15px Arial, sans-serif;
+  color: #222;
+  background: #f1f1f1;
+}
+
+/* Barre supérieure compacte */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 10px;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+h1 {
+  display: none;
+}
+
+.message {
+  flex: 1;
+  margin: 0;
+  line-height: 1.25;
+}
+
+button {
+  flex: 0 0 auto;
+  padding: 6px 11px;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #f7f7f7;
+}
+
+button:hover {
+  background: #eaeaea;
+}
+
+main {
+  max-width: 1500px;
+  margin: 18px auto;
+  padding: 0 16px 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  break-inside: avoid;
+}
+
+.num {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #666;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #eee;
+}
+
+.note {
+  min-height: 70px;
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid #aaa;
+  white-space: pre-wrap;
+}
+
+.changed {
+  color: red;
+}
+
+/* Tablettes */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Téléphones */
+@media (max-width: 600px) {
+  header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .message {
+    flex-basis: 100%;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Impression / export PDF */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  body {
+    background: white;
+  }
+
+  header {
+    position: static;
+    display: block;
+    padding: 0 0 8mm;
+    border: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4mm;
+  }
+
+  .card {
+    padding: 2mm;
+    border-radius: 0;
+  }
+
+  img {
+    height: 35mm;
+    background: white;
+  }
+
+  .note {
+    min-height: 20mm;
+    padding: 2mm;
+    font-size: 8pt;
+  }
+}
+
+</style>
+</head>
+<body>
+<header>
+  <h1>Relecture légendes A3</h1>
+  <p class="message">Bjr Claudia, Olivier et Paul. Une fois fini modifications, exporter en PDF et envoyez-le moi. Attention a ne pas modif tous les 3 la meme légende. Celle Pour Paul sont indiquer.</p>
+  <button class="no-print" onclick="window.print()">🖨️ Exporter en PDF</button>
+</header>
+<main><section class="grid">
+          <article class="card">
+            <div class="num">1</div>
+            <img src="images/-05-1989.jpg" alt="Photo 1">
+            <div class="note" contenteditable="true" spellcheck="true">Peinture bleu poue une campagne publicitaire sur un tram en réparation des les ateliers de la STIB - cliché pris le 15-05-1989</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">2</div>
+            <img src="images/impulsion.jpg" alt="Photo 2">
+            <div class="note" contenteditable="true" spellcheck="true">Impulsion lors de la célébration de nos 10 ans. Cette année, ils nous accompagnent à nouveau pour célébrer nos 20 ans. Merci à eux.  Retrouver les ici : https://www.impulsion-dance.be/</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">3</div>
+            <img src="images/3470 1027 Ch Anvers 1930.jpg" alt="Photo 3">
+            <div class="note" contenteditable="true" spellcheck="true">La Belgian Street Railways and Omnibus Company Limited (BSROC) disparait le 1er janvier 1875, remplacée par la Société des Tramways bruxellois (TB) qui devriendra par la suite la STIB</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">4</div>
+            <img src="images/3489 L46 Ch Anvers 04-1958 à 25-06-1961.jpg" alt="Photo 4">
+            <div class="note" contenteditable="true" spellcheck="true">Archive de la Chaussée d&#39;Anvers de  04-1958 à 25-06-1961</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">5</div>
+            <img src="images/7007 7123 At Ch Anvers JMPholien env 1973.jpg" alt="Photo 5">
+            <div class="note" contenteditable="true" spellcheck="true">Atelier de réparation de la STIB en 1973.
+</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">6</div>
+            <img src="images/à Pole Nord.jpg" alt="Photo 6">
+            <div class="note" contenteditable="true" spellcheck="true">Championat inter classe de hokey en salle organiser par une école dans la salle multisport du Centre Pole Nord</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">7</div>
+            <img src="images/archives_mozaique_couleur_3_compressed.jpg" alt="Photo 7">
+            <div class="note" contenteditable="true" spellcheck="true">Archives d’un bâtiment laissé à l’abandon après le départ de la STIB, avant sa reprise par la Ville de Bruxelles en vue de sa rénovation.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">8</div>
+            <img src="images/archives_plan_architecte.jpg" alt="Photo 8">
+            <div class="note" contenteditable="true" spellcheck="true">Plans d’origine du bâtiment retrouvés dans les archives après plusieurs années d’abandon. Grâce à ces traces historiques et aux plans d’origine retrouvés, le bâtiment a pu être rénové dans de bonnes conditions.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">9</div>
+            <img src="images/Bruxelles Rinking_la piste.jpg" alt="Photo 9">
+            <div class="note" contenteditable="true" spellcheck="true">Cette photographie ancienne nous plonge dans l’atmosphère du Rinking de Bruxelles, une vaste salle consacrée au patinage à roulettes. Au premier plan, plusieurs membres du personnel posent sur la piste.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">10</div>
+            <img src="images/Chaussée d&#39;Anvers 210_1993.jpg" alt="Photo 10">
+            <div class="note" contenteditable="true" spellcheck="true">210 de la Chaussée d&#39;Anvers en 1993</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">11</div>
+            <img src="images/Chaussée d&#39;Anvers 210_aujourd&#39;hui.jpg" alt="Photo 11">
+            <div class="note" contenteditable="true" spellcheck="true">210 de la Chaussée d&#39;Anvers de nos jours</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">12</div>
+            <img src="images/Concert sosie de Elvis Presley en.jpg" alt="Photo 12">
+            <div class="note" contenteditable="true" spellcheck="true">Concert d&#39;un sosie d’Elvis Presley sur la scène de l’espace culturel de notre centre Pole Nord pour faire découvrir aux plus petits et ravir les plus grands.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">13</div>
+            <img src="images/Cours d&#39;alphabetisation_1.jpg" alt="Photo 13">
+            <div class="note" contenteditable="true" spellcheck="true">Cours d’alphabétisation proposés aux habitants du quartier, un espace d’apprentissage, de rencontre et de partage où chacun peut progresser à son rythme.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">14</div>
+            <img src="images/Cours d&#39;alphabetisation_2.jpg" alt="Photo 14">
+            <div class="note" contenteditable="true" spellcheck="true">Cours d’alphabétisation proposés aux habitants du quartier, un espace d’apprentissage, de rencontre et de partage où chacun peut progresser à son rythme.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">15</div>
+            <img src="images/CP_Sporting Palace Rinking.jpg" alt="Photo 15">
+            <div class="note" contenteditable="true" spellcheck="true">Vue intérieure du Sporting Palace de Bruxelles : la vaste piste de patinage à roulettes du Rinking s’étend sous la haute verrière, bordée de gradins et d’espaces réservés au public. Cette photographie témoigne de l’ampleur et de l’élégance de ce lieu de loisirs autrefois très fréquenté vers 1910</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">16</div>
+            <img src="images/culture pectacle_1.jpg" alt="Photo 16">
+            <div class="note" contenteditable="true" spellcheck="true">Sur scène, une jeune comédienne d’Histoires de promesse se tient au premier plan, entourée des autres participants du Centre de jeunes Loco-Motive. Mis en scène par Sarah Jafari, le spectacle mêle théâtre, danse et musique pour faire entendre les récits et les mémoires de la deuxième génération issue de l’immigration.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">17</div>
+            <img src="images/culture pectacle_2.jpg" alt="Photo 17">
+            <div class="note" contenteditable="true" spellcheck="true">Affiche du spectacle Histoires de promesse, créé à l’occasion des 50 ans de l’immigration turque et marocaine en Belgique. Le projet, réalisé avec les adolescents du Centre de jeunes Loco-Motive, s’appuie sur leurs récits, leurs identités et leurs histoires familiales. Écrit et mis en scène par Saïd Jaafari.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">18</div>
+            <img src="images/culture pectacle_3.jpg" alt="Photo 18">
+            <div class="note" contenteditable="true" spellcheck="true">Spectacle de danse classique - cliché pris le 25-03-2017</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">19</div>
+            <img src="images/Dans les coulisses..jpg" alt="Photo 19">
+            <div class="note" contenteditable="true" spellcheck="true">Dans les coulisses où la magie prend forme en son et en lumière grâce à notre régisseur JP.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">20</div>
+            <img src="images/etudiante.jpg" alt="Photo 20">
+            <div class="note" contenteditable="true" spellcheck="true">La salle d’étude du centre Pole Nord, un espace dédié au travail et à la concentration</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">21</div>
+            <img src="images/IMG_20170208_161048_resized_20170209_113336648.jpg" alt="Photo 21">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE date 2017 </div>
+          </article>
+        
+          <article class="card">
+            <div class="num">22</div>
+            <img src="images/IMG_2536.jpg" alt="Photo 22">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE </div>
+          </article>
+        
+          <article class="card">
+            <div class="num">23</div>
+            <img src="images/IMG_9542.jpg" alt="Photo 23">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE </div>
+          </article>
+        
+          <article class="card">
+            <div class="num">24</div>
+            <img src="images/Le_Roi qsite.jpg" alt="Photo 24">
+            <div class="note" contenteditable="true" spellcheck="true">Le Roi Philippe quittant le Centre Pole Nord après sa visite</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">25</div>
+            <img src="images/Le_Roi_questions_reponse.jpg" alt="Photo 25">
+            <div class="note" contenteditable="true" spellcheck="true">Un souvenir inoubliable et une grande fierté pour notre centre Pole Nord : ici le roi Philippe de Belgique échange avec les enfants lors de sa visite, Un moment privilégié qui restera gravé dans la mémoire de notre centre et de tous ceux qui ont eu la chance d’y assister.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">26</div>
+            <img src="images/Merci au  centre PN.jpg" alt="Photo 26">
+            <div class="note" contenteditable="true" spellcheck="true">Merci au public d’avoir partagé ce moment avec nous dans l’espace Culture de notre centre Pole Nord</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">27</div>
+            <img src="images/Mise en place d&#39;Pole Nord..jpg" alt="Photo 27">
+            <div class="note" contenteditable="true" spellcheck="true"> Le piano prend place sur la scène de l’espace culturel de notre centre Pôle Nord, prêt à accompagner de beaux moments de partage musical.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">28</div>
+            <img src="images/PN archive batiment 210.jpg" alt="Photo 28">
+            <div class="note" contenteditable="true" spellcheck="true"> source inconnus</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">29</div>
+            <img src="images/spectacle clown monocycle.jpg" alt="Photo 29">
+            <div class="note" contenteditable="true" spellcheck="true">Spectacle d’animation réunissant les enfants et leurs parents dans la grande salle Pôle Nord, aménagée pour accueillir des activités récréatives et familiales destinées aux Maisons des Enfants de la Ville de Bruxelles.</div>
+          </article>
+        </section></main>
+
+<script>
+  const noteElements = [...document.querySelectorAll(".note")];
+  const originalNotes = noteElements.map(element => element.textContent);
+
+  function escapeText(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function markChanges(original, current) {
+    const oldWords = original.match(/\s+|[^\s]+/g) || [];
+    const newWords = current.match(/\s+|[^\s]+/g) || [];
+
+    let oldIndex = 0;
+    let newIndex = 0;
+    const output = [];
+
+    while (newIndex < newWords.length) {
+      if (oldIndex < oldWords.length &&
+          oldWords[oldIndex] === newWords[newIndex]) {
+        output.push(escapeText(newWords[newIndex]));
+        oldIndex++;
+        newIndex++;
+      } else {
+        output.push(
+          '<span class="changed">' +
+          escapeText(newWords[newIndex]) +
+          '</span>'
+        );
+        newIndex++;
+      }
+    }
+
+    return output.join("").replace(/\n/g, "<br>");
+  }
+
+  function placeCaretAtEnd(element) {
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    range.collapse(false);
+
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+
+  noteElements.forEach((element, index) => {
+    element.addEventListener("input", () => {
+      const currentText = element.innerText;
+      element.innerHTML = markChanges(originalNotes[index], currentText);
+      placeCaretAtEnd(element);
+    });
+  });
+</script>
+</body>
+</html>

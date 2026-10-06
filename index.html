@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Relecture des légendes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Topbar originale */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            width: 100%;
+            height: 60px;
+            padding: 0 20px;
+
+            background-color: #222;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .topbar-title {
+            margin-right: 20px;
+
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+
+            border: none;
+            border-radius: 4px;
+
+            color: white;
+            background-color: #555;
+
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #777;
+        }
+
+        .nav-button.active {
+            background-color: #0078d4;
+        }
+
+        /* Zone de l'iframe */
+        .page-container {
+            width: 100%;
+            height: 100vh;
+            padding-top: 60px;
+        }
+
+        #pageFrame {
+            display: block;
+
+            width: 100%;
+            height: calc(100vh - 60px);
+
+            border: none;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="topbar-title">
+            Relecture des légendes
+        </div>
+
+        <button
+            class="nav-button active"
+            data-page="A3/relecture-legendes_A3.html">
+            Page A3
+        </button>
+
+        <button
+            class="nav-button"
+            data-page="A4/relecture-legendes_A4.html">
+            Page A4
+        </button>
+    </header>
+
+    <main class="page-container">
+        <iframe
+            id="pageFrame"
+            src="A3/relecture-legendes_A3.html"
+            title="Page affichée">
+        </iframe>
+    </main>
+
+    <script>
+        const pageFrame = document.getElementById("pageFrame");
+        const navButtons = document.querySelectorAll(".nav-button");
+
+        navButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const pagePath = this.getAttribute("data-page");
+
+                pageFrame.src = pagePath;
+
+                navButtons.forEach(function (item) {
+                    item.classList.remove("active");
+                });
+
+                this.classList.add("active");
+            });
+        });
+    </script>
+
+</body>
+</html>

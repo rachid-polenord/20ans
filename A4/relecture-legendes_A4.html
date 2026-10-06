@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relecture des légendes</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 15px Arial, sans-serif;
+  color: #222;
+  background: #f1f1f1;
+}
+
+/* Barre supérieure compacte */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 10px;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+h1 {
+  display: none;
+}
+
+.message {
+  flex: 1;
+  margin: 0;
+  line-height: 1.25;
+}
+
+button {
+  flex: 0 0 auto;
+  padding: 6px 11px;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #f7f7f7;
+}
+
+button:hover {
+  background: #eaeaea;
+}
+
+main {
+  max-width: 1500px;
+  margin: 18px auto;
+  padding: 0 16px 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  break-inside: avoid;
+}
+
+.num {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #666;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #eee;
+}
+
+.note {
+  min-height: 70px;
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid #aaa;
+  white-space: pre-wrap;
+}
+
+.changed {
+  color: red;
+}
+
+/* Tablettes */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Téléphones */
+@media (max-width: 600px) {
+  header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .message {
+    flex-basis: 100%;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Impression / export PDF */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  body {
+    background: white;
+  }
+
+  header {
+    position: static;
+    display: block;
+    padding: 0 0 8mm;
+    border: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4mm;
+  }
+
+  .card {
+    padding: 2mm;
+    border-radius: 0;
+  }
+
+  img {
+    height: 35mm;
+    background: white;
+  }
+
+  .note {
+    min-height: 20mm;
+    padding: 2mm;
+    font-size: 8pt;
+  }
+}
+
+</style>
+</head>
+<body>
+<header>
+  <h1>Relecture légendes A4</h1>
+  <p class="message">Bonjour Olivier, une fois tes modifications apportées, exporte en PDF et envoie-le moi. Les mots modifiés apparaîtront en rouge dans le PDF.</p>
+  <button class="no-print" onclick="window.print()">🖨️ Exporter en PDF</button>
+</header>
+<main><section class="grid">
+          <article class="card">
+            <div class="num">1</div>
+            <img src="images/0I5A0617.jpg" alt="Photo 1">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">2</div>
+            <img src="images/0I5A0659.jpg" alt="Photo 2">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">3</div>
+            <img src="images/0I5A2471.jpg" alt="Photo 3">
+            <div class="note" contenteditable="true" spellcheck="true">Au sein de notre centre, le sport et l’apprentissage sont ouverts à tous les âges. Enfants, adolescents et adultes se retrouvent pour apprendre, progresser et partager ensemble : il n’y a pas d’âge pour apprendre, ni pour s’épanouir !</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">4</div>
+            <img src="images/0I5A2480.jpg" alt="Photo 4">
+            <div class="note" contenteditable="true" spellcheck="true">Les cours de basket se déroulent dans la bonne humeur, entre sourires, encouragements et plaisir du jeu, chacun progresse à son rythme ! </div>
+          </article>
+        
+          <article class="card">
+            <div class="num">5</div>
+            <img src="images/0I5A2572.jpg" alt="Photo 5">
+            <div class="note" contenteditable="true" spellcheck="true">La salle d’étude du centre Pole Nord, un espace dédié au travail et à la concentration</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">6</div>
+            <img src="images/1992-09, Bruxelles, Atelier de la Chaussée d&#39;Anvers (1)_flickr.jpg" alt="Photo 6">
+            <div class="note" contenteditable="true" spellcheck="true">Atelier de réparation de la STIB - 09 -1992</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">7</div>
+            <img src="images/1992-09, Bruxelles, Atelier de la Chaussée d&#39;Anvers (4)_flickr.jpg" alt="Photo 7">
+            <div class="note" contenteditable="true" spellcheck="true">Atelier de réparation de la STIB - 09 -1992</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">8</div>
+            <img src="images/32606772023_fa06b611b2_k.jpg" alt="Photo 8">
+            <div class="note" contenteditable="true" spellcheck="true">Notre centre accueille des échanges avec le public, favorisant le dialogue, la participation et le partage dans le quartier.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">9</div>
+            <img src="images/33421003795_fa096291cf_k.jpg" alt="Photo 9">
+            <div class="note" contenteditable="true" spellcheck="true">Les cours d’alphabétisation : un moment de partage, d’apprentissage et de concentration, où chacun avance à son rythme dans un esprit de bienveillance et de solidarité.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">10</div>
+            <img src="images/337022904_1549215035603091_1827235304242869289_n.jpg" alt="Photo 10">
+            <div class="note" contenteditable="true" spellcheck="true">Championat inter classe de hokey en salle organiser par une école dans la salle multisport du Centre Pole Nord</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">11</div>
+            <img src="images/38958940855_95f3e387d8_k.jpg" alt="Photo 11">
+            <div class="note" contenteditable="true" spellcheck="true">Les jeunes du quartier Nord disposent eux aussi d’un espace accueillant et d’un encadrement au centre Pôle Nord dans un cadre convivial et bienveillant où ils peuvent se rencontrer et partager leur passion du sport et progresser ensemble</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">12</div>
+            <img src="images/48821281116_ff47c1305b_k.jpg" alt="Photo 12">
+            <div class="note" contenteditable="true" spellcheck="true">Une réflexion collective autour de la question : « Comment imagines-tu ton centre de jeunes idéal ? » Les jeunes ont partagé leurs idées, leurs envies et leurs attentes afin de contribuer à la construction d’un centre qui leur ressemble.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">13</div>
+            <img src="images/48857922748_2b4f2111c2_c.jpg" alt="Photo 13">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">14</div>
+            <img src="images/48858256356_41476075f1_k.jpg" alt="Photo 14">
+            <div class="note" contenteditable="true" spellcheck="true">Affiche de l’exposition photographique Histoires de promesse, réalisée par Cyrús Piàques. Présentée à l’atrium du centre BRAVVO du 3 au 30 avril 2014, elle témoigne du travail artistique mené avec de jeunes participants autour de la mémoire, de l’identité et de la transmission</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">15</div>
+            <img src="images/48858277556_5639aab364_k.jpg" alt="Photo 15">
+            <div class="note" contenteditable="true" spellcheck="true">Photo de famille de la troupe d’Histoires de promesse, réunissant les adolescents du Centre de jeunes Loco-Motive de l’ASBL BRAVVO, les comédiens et l’équipe artistique du spectacle. Une création théâtrale consacrée aux parcours, aux mémoires et aux promesses liées aux cinquante ans de l’immigration turque et marocaine en Belgique.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">16</div>
+            <img src="images/6594539971_f099646255_b.jpg" alt="Photo 16">
+            <div class="note" contenteditable="true" spellcheck="true">Atelier de réparation de la STIB - 09 -1992</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">17</div>
+            <img src="images/Affiche  1910.jpg" alt="Photo 17">
+            <div class="note" contenteditable="true" spellcheck="true">Affiche publicitaire pour la patinoire à roulettes Brussels Rinking Co’y Ltd provisoirement établie dans le dépôt de tram du 208-210 chaussée d’Anvers vers 1910</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">18</div>
+            <img src="images/archives_mozaique_couleur_1.jpg" alt="Photo 18">
+            <div class="note" contenteditable="true" spellcheck="true">Vues de l’ancien centre PN depuis les rues voisines, montrant son implantation dans un environnement urbain dense avant sa reprise par la ville pour sa transformation en centre sportif.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">19</div>
+            <img src="images/archives_mozaique_couleur_2.jpg" alt="Photo 19">
+            <div class="note" contenteditable="true" spellcheck="true">Vues de l’ancien bâtiment du centre PN et de ses abords, laissé à l’abandon par la STIB.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">20</div>
+            <img src="images/article_1872.jpg" alt="Photo 20">
+            <div class="note" contenteditable="true" spellcheck="true">Construit en deux étapes, entre 1872 et 1873, notre bâtiment abritait à l’origine un dépôt de tramways de la compagnie belge Belgian Street Railway and Omnibus Company, capable d’accueillir 38 voitures ainsi que des écuries pour 128 chevaux. Transformé au fil du temps, il accueille aujourd’hui notre centre, qui célèbre ses 20 ans. Cette photographie témoigne de l’histoire et de l’évolution de ce lieu depuis plus de 150 ans.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">21</div>
+            <img src="images/Ch Anvers JMPholien env 1973.jpg" alt="Photo 21">
+            <div class="note" contenteditable="true" spellcheck="true">Atelier de la STIB en 1973</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">22</div>
+            <img src="images/EDAN1326.jpg" alt="Photo 22">
+            <div class="note" contenteditable="true" spellcheck="true">Sa Majesté le Roi Philippe a assisté à une représentation privée de la pièce Mémoires. Sa présence a marqué une étape importante dans l’histoire du projet et a été accueillie avec une grande fierté par les jeunes comédiens.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">23</div>
+            <img src="images/IMG_20161210_141838.jpg" alt="Photo 23">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">24</div>
+            <img src="images/IMG_2677.jpg" alt="Photo 24">
+            <div class="note" contenteditable="true" spellcheck="true">À l’issue de la représentation privée de Mémoires, les jeunes comédiens saluent avec émotion Sa Majesté le roi Philippe. Un moment fort pour cette troupe, dont le travail et l’engagement ont été exceptionnellement mis à l’honneur.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">25</div>
+            <img src="images/IMG_7546.jpg" alt="Photo 25">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">26</div>
+            <img src="images/IMG_9570.jpg" alt="Photo 26">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">27</div>
+            <img src="images/impulsion_2.jpg" alt="Photo 27">
+            <div class="note" contenteditable="true" spellcheck="true">Impulsion lors de la célébration de nos 10 ans. Cette année, ils nous accompagnent à nouveau pour célébrer nos 20 ans. Merci à eux.  Retrouver les ici : https://www.impulsion-dance.be/</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">28</div>
+            <img src="images/Invitation à la pièce Mémoires.jpg" alt="Photo 28">
+            <div class="note" contenteditable="true" spellcheck="true">Affiche du spectacle Mémoires, une création originale de la troupe de jeunes comédiens du Centre de jeunes Loco-Motive, réalisée avec le soutien de la Ville de Bruxelles. Le texte a été écrit par les jeunes acteurs et la mise en scène assurée par Sabih Jaafari, avec l’aide de Sanah Khali.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">29</div>
+            <img src="images/Le_Roi_1.jpg" alt="Photo 29">
+            <div class="note" contenteditable="true" spellcheck="true">Lors de sa visite dans notre centre, le Roi Philippe de Belgique s&#39;est arrêté à l&#39;atelier de dessin. Il a pris le temps de se pencher vers les enfants, pour observer leurs créations de près et échanger avec eux, autour de leurs créations.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">30</div>
+            <img src="images/Le_Roi_2.jpg" alt="Photo 30">
+            <div class="note" contenteditable="true" spellcheck="true">Lors de sa venue, Sa Majesté le Roi Philippe a pris le temps d’aller à la rencontre du public et d’échanger avec les enfants présents. Cette proximité, marquée par l’écoute et la simplicité, a offert aux jeunes un moment privilégié et un souvenir particulièrement fort de cette représentation.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">31</div>
+            <img src="images/Le_Roi_salle_de_sport.jpg" alt="Photo 31">
+            <div class="note" contenteditable="true" spellcheck="true">Une visite exceptionnelle dans notre centre sportif ! Nous avons eu le plaisir et l’honneur de recevoir Sa Majesté le Roi Philippe de Belgique un moment riche en émotion, que nous garderons précieusement en mémoire. </div>
+          </article>
+        
+          <article class="card">
+            <div class="num">32</div>
+            <img src="images/Le_Roi_sur_scene.jpg" alt="Photo 32">
+            <div class="note" contenteditable="true" spellcheck="true">À l’issue de la représentation, Sa Majesté le Roi Philippe a rencontré les jeunes comédiens et a posé avec la troupe. Cette rencontre a permis de saluer leur travail, leur engagement et leur investissement dans la création de la pièce Mémoires. Un souvenir marquant pour l’ensemble de l’équipe.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">33</div>
+            <img src="images/_MG_1621.jpg" alt="Photo 33">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">34</div>
+            <img src="images/_MG_1944.jpg" alt="Photo 34">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">35</div>
+            <img src="images/photo Bruno De Jonghe.jpg" alt="Photo 35">
+            <div class="note" contenteditable="true" spellcheck="true">DEMANDER PAUL SOURCE OU LÉGENDE</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">36</div>
+            <img src="images/Picture3.jpg" alt="Photo 36">
+            <div class="note" contenteditable="true" spellcheck="true">Pour les enfants, une salle de psychomotricité sert à apprendre à mieux connaître et maîtriser leur corps tout en jouant. Elle leur offre un espace sécurisé pour bouger, explorer et développer leurs compétences.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">37</div>
+            <img src="images/Picture5.jpg" alt="Photo 37">
+            <div class="note" contenteditable="true" spellcheck="true">Des moments de fête et de convivialité où petits et grands se réunissent pour profiter ensemble d’activités, de rires et de beaux souvenirs au centre Pole Nord.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">38</div>
+            <img src="images/Picture6.jpg" alt="Photo 38">
+            <div class="note" contenteditable="true" spellcheck="true">Au centre Pole Nord, chaque événement est une occasion de se retrouver, de créer, de s’amuser et de partager des instants chaleureux dans une ambiance festive et conviviale.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">39</div>
+            <img src="images/Picture9.jpg" alt="Photo 39">
+            <div class="note" contenteditable="true" spellcheck="true">Une ambiance musicale et conviviale animée par la troupe lors d’un événement accueilli au sein du centre. </div>
+          </article>
+        
+          <article class="card">
+            <div class="num">40</div>
+            <img src="images/R671 Ch31 R29 At Ch Anvers MBrosteaux 19-07-1961.jpg" alt="Photo 40">
+            <div class="note" contenteditable="true" spellcheck="true">Tramway électrique successeur des tramways hippomobiles, autrefois tirés par des chevaux. Il fait partie des premiers modèles électriques utilisés pour remplacer progressivement la traction animale et moderniser les transports publics. Grâce à son alimentation électrique par la ligne aérienne, il pouvait transporter davantage de passagers, plus rapidement et sur de plus longues distances.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">41</div>
+            <img src="images/Représentation le 21 mars 2015.jpg" alt="Photo 41">
+            <div class="note" contenteditable="true" spellcheck="true">Affiche de l’exposition Mémoires, organisée par le Centre de jeunes Loco-Motive le 21 mars 2015 au Centre Pôle Nord. L’exposition s’inscrivait dans le cadre d’un projet d’échange culturel avec des jeunes à l’étranger, dont les bénéfices devaient contribuer au financement.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">42</div>
+            <img src="images/STP60275.jpg" alt="Photo 42">
+            <div class="note" contenteditable="true" spellcheck="true">Notre espace au centre PN accueille une grande variété d’activités, dont le tir à l’arc, qui permet de développer la concentration, la précision.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">43</div>
+            <img src="images/STP60282.jpg" alt="Photo 43">
+            <div class="note" contenteditable="true" spellcheck="true">Une activité pleine de couleurs et de créativité pour les  Maisons des Enfants de la Ville de Bruxelles ! Les enfants ont laissé libre cours à leur imagination en proposant au sculpteurs sur ballons de jolies sculptures en ballons, pour un moment ludique et joyeux</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">44</div>
+            <img src="images/STP60312.jpg" alt="Photo 44">
+            <div class="note" contenteditable="true" spellcheck="true">Un bon parcours de motricité est important pour développer l’équilibre, la coordination  et la confiance chez l’enfant, tout en favorisant l’apprentissage par le jeu</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">45</div>
+            <img src="images/STP60313.jpg" alt="Photo 45">
+            <div class="note" contenteditable="true" spellcheck="true">L’équilibre est important pour le développement de l’enfant. Merci à la salle de psychomotricité de contribuer à son apprentissage grâce à des activités adaptées et ludiques.</div>
+          </article>
+        
+          <article class="card">
+            <div class="num">46</div>
+            <img src="images/streetcar-pulling-horses.jpg" alt="Photo 46">
+            <div class="note" contenteditable="true" spellcheck="true">Tramway hippomobile, tiré par deux chevaux et accompagné d&#39;un palefrenier, devant l’atelier de réparation qui occupait autrefois le bâtiment de notre centre PN. Cette voiture témoigne des débuts du transport public urbain sur rails, à la fin du XIXᵉ siècle.</div>
+          </article>
+        </section></main>
+
+<script>
+  const noteElements = [...document.querySelectorAll(".note")];
+  const originalNotes = noteElements.map(element => element.textContent);
+
+  function escapeText(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function markChanges(original, current) {
+    const oldWords = original.match(/\s+|[^\s]+/g) || [];
+    const newWords = current.match(/\s+|[^\s]+/g) || [];
+
+    let oldIndex = 0;
+    let newIndex = 0;
+    const output = [];
+
+    while (newIndex < newWords.length) {
+      if (oldIndex < oldWords.length &&
+          oldWords[oldIndex] === newWords[newIndex]) {
+        output.push(escapeText(newWords[newIndex]));
+        oldIndex++;
+        newIndex++;
+      } else {
+        output.push(
+          '<span class="changed">' +
+          escapeText(newWords[newIndex]) +
+          '</span>'
+        );
+        newIndex++;
+      }
+    }
+
+    return output.join("").replace(/\n/g, "<br>");
+  }
+
+  function placeCaretAtEnd(element) {
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    range.collapse(false);
+
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+
+  noteElements.forEach((element, index) => {
+    element.addEventListener("input", () => {
+      const currentText = element.innerText;
+      element.innerHTML = markChanges(originalNotes[index], currentText);
+      placeCaretAtEnd(element);
+    });
+  });
+</script>
+</body>
+</html>
